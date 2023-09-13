@@ -16,7 +16,7 @@ dotenv.config({ path: resolve(__dirname, "..", "settings.env") });
 const lib = AitumCC.get();
 
 export const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 (async () => {
