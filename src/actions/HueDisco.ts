@@ -68,7 +68,7 @@ async function method(inputs: { time: number; speed: number }) {
     const themeState = relevantSingleStateThemes[themeKey];
     console.log("state:", themeKey);
     fetch(
-      `http://${process.env.HUE_IP}/api/${process.env.HUE_USERNAME}/groups/3/action`,
+      `http://${process.env.HUE_IP}/api/${process.env.HUE_USERNAME}/groups/82/action`,
       {
         method: "PUT",
         headers: {

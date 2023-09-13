@@ -20,7 +20,7 @@ async function method(inputs: { theme: string }) {
   const lib = AitumCC.get().getAitumJS();
   const aitumDevice = (await lib.getDevices(DeviceType.AITUM))[0];
 
-  const lightIds = ["35", "34", "29", "31"]; // change this
+  const lightIds = ["38", "25", "26", "27", "28", "29", "30"]; // change this
 
   const responses = lightIds.map((lightId) => {
     let state;

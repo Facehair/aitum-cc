@@ -1,6 +1,6 @@
 export interface HueTheme {
   on: boolean;
-  // bri?: number;
+  bri?: number;
   hue?: number;
   // sat?: number;
   // effect?: string;
@@ -103,55 +103,272 @@ export const singleStateThemes: { [key: string]: HueTheme } = {
 };
 
 export const multiStateThemes: { [key: string]: { [key: string]: HueTheme } } =
+  // [
+  // 			"38",
+  // 			"25",
+  // 			"26",
+  // 			"27",
+  // 			"28",
+  // 			"29",
+  // 			"30"
+  // 		]
   {
     default: {
-      "35": {
+      "38": {
+        // Office TV
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.green.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "25": {
+        // hue play 1
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.blue.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "26": {
         // hue play 2
         on: true,
         // bri: 254,
         // hue: 46551,
         // sat: 254,
         // effect: "none",
-        xy: [0.1536, 0.0643],
+        xy: singleStateThemes.red.xy,
         // ct: 500,
         // alert: "select",
         // colormode: "xy",
       },
-      "34": {
-        // hue play 1
+      "27": {
+        // Office Fan 1
         on: true,
         // bri: 254,
-        // hue: 63584,
+        // hue: 46551,
         // sat: 254,
         // effect: "none",
-        xy: [0.6345, 0.2807],
+        xy: singleStateThemes.orange.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "28": {
+        // Office Fan 2
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.pink.xy,
         // ct: 500,
         // alert: "select",
         // colormode: "xy",
       },
       "29": {
-        // office shelf (little gold lamp)
+        // Office Fan 3
         on: true,
         // bri: 254,
-        // hue: 20650,
-        // sat: 253,
+        // hue: 46551,
+        // sat: 254,
         // effect: "none",
-        xy: [0.2713, 0.6233],
-        // ct: 153,
+        xy: singleStateThemes.blue.xy,
+        // ct: 500,
         // alert: "select",
         // colormode: "xy",
       },
-      "31": {
-        // office fan
+      "30": {
+        // Office Fan 4
         on: true,
         // bri: 254,
-        // hue: 10337,
-        // sat: 16,
+        // hue: 46551,
+        // sat: 254,
         // effect: "none",
-        xy: [0.3868, 0.3825],
-        // ct: 258,
+        xy: singleStateThemes.purple.xy,
+        // ct: 500,
         // alert: "select",
-        // colormode: "ct",
+        // colormode: "xy",
+      },
+    },
+    multi: {
+      "38": {
+        // Office TV
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.green.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "25": {
+        // hue play 1
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.blue.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "26": {
+        // hue play 2
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.red.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "27": {
+        // Office Fan 1
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.orange.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "28": {
+        // Office Fan 2
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.pink.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "29": {
+        // Office Fan 3
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.blue.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "30": {
+        // Office Fan 4
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.purple.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+    },
+    sunset: {
+      "38": {
+        // Office TV
+        on: true,
+        bri: 138,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: [0.6635, 0.3293],
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "25": {
+        // hue play 1
+        on: true,
+        // bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: singleStateThemes.blue.xy,
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "26": {
+        // hue play 2
+        on: true,
+        bri: 254,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: [0.1554, 0.1339],
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "27": {
+        // Office Fan 1
+        on: true,
+        bri: 125,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: [0.5546, 0.2428],
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "28": {
+        // Office Fan 2
+        on: true,
+        bri: 125,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: [0.6768, 0.3141],
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "29": {
+        // Office Fan 3
+        on: true,
+        bri: 125,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: [0.5758, 0.3274],
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
+      },
+      "30": {
+        // Office Fan 4
+        on: true,
+        bri: 125,
+        // hue: 46551,
+        // sat: 254,
+        // effect: "none",
+        xy: [0.6364, 0.2963],
+        // ct: 500,
+        // alert: "select",
+        // colormode: "xy",
       },
     },
   };

@@ -5,8 +5,10 @@ import {
   IntInput,
   StringInput,
 } from "aitum.js/lib/inputs";
-import { AitumCC } from "aitum.js";
+import { AitumCC, AitumJS } from "aitum.js";
 import { DeviceType } from "aitum.js/lib/enums";
+//@ts-ignore untyped garbage - had to npm install nod-fetch@2 to avoid weird TS errors
+import fetch from "node-fetch";
 
 /*********** CONFIG ***********/
 // The custom code action name
@@ -45,10 +47,10 @@ async function method(inputs: {
   const rules = await lib.aitum.getRules();
   const { chatMessage, chatterUsername, isMod } = inputs;
   const messageKey = chatMessage.split(" ")[0];
+  const messageArg = chatMessage.split(" ")[1];
 
   switch (messageKey) {
-    case "!deathsssssssssssssssssssssssssssssss":
-      const messageArg = chatMessage.split(" ")[1];
+    case "!deathhhhhh":
       if (!messageArg) {
         const ruleId = findRuleIdByName(rules, "deathMessage");
         aitumDevice.triggerRule(ruleId);
@@ -62,6 +64,25 @@ async function method(inputs: {
           const ruleId = findRuleIdByName(rules, "deathRemove");
           aitumDevice.triggerRule(ruleId);
         }
+      }
+    case "!so":
+      if (isMod) {
+        const shoutTarget = messageArg;
+        const prevGame = await fetch(
+          `https://decapi.me/twitch/game/${shoutTarget}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        //.then((resp: string) => resp);
+
+        console.log("game", prevGame);
+
+        const ruleId = findRuleIdByName(rules, "shoutout");
+        aitumDevice.triggerRule(ruleId);
       }
     default:
       return;

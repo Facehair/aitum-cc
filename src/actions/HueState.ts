@@ -27,7 +27,7 @@ async function method(inputs: {
   };
   console.log("sending:", JSON.stringify(hueState));
   const response = axios.put(
-    `http://${process.env.HUE_IP}/api/${process.env.HUE_USERNAME}/groups/3/action`,
+    `http://${process.env.HUE_IP}/api/${process.env.HUE_USERNAME}/groups/82/action`,
     hueState
   );
   response.then((resp: any) => console.log("hue resp: ", resp));
